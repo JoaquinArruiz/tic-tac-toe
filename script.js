@@ -66,6 +66,7 @@ function checkWinner(){ // checks the winner if any of the win conditions is acc
     winningCondition.forEach(condition =>{
         if (activePlayer.positions.includes(condition[0]) && activePlayer.positions.includes(condition[1]) && activePlayer.positions.includes(condition[2])){
             console.log('winner is ', activePlayer.type)
+            
         }
     })
 }
