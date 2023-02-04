@@ -1,35 +1,180 @@
-.gameboard {
-    display: grid;
-    grid-template: 1fr 1fr 1fr /1fr 1fr 1fr;
-    grid-gap: 0em;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500&family=Itim&family=Pacifico&family=Righteous&family=Roboto:wght@400;500&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.cell {
-    border: 1px solid black;
-    height: 100px;
-    width: 132px;
+html{
+    background-color: rgb(78, 50, 104);
+}
+
+body{
+    max-width: 30rem;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2em;
+    background-color: #693F91;
+}
+.header{
+    margin-bottom: 2em;
+    font-family: 'Pacifico', cursive;
     text-align: center;
-    position: relative;
-    padding-top: 50px;
-    font-size: 2em;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+}
+.header h1 {
+    font-size: 3em;
+}
+.header footer{
+    margin-top: 1em;
+    
+}
+
+.header footer a {
+    font-family: 'Righteous', sans-serif;
+    text-decoration: none;
+    color: aliceblue;
     transition: ease-in-out, 250ms;
 }
 
+footer a:hover {
+    text-decoration: none;
+    color: rgb(61, 165, 255);
+    transform: scale(1.10);
+}
+
+
+.gridboard{
+    position: relative;
+    background-color: rgb(61, 61, 61);
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 10px;
+}
+
+.gameboard {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 1rem;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    border-radius: 6px;
+}
+
+.cell{
+    position: relative;
+    background-color: rgb(100, 83, 212);
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 30%;
+    font-size: 3em;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0,0.5);
+    transition:ease, 250ms;
+}
+
 .cell:hover{
-    background-color: blueviolet;
+    background-color: rgb(226, 43, 43);
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .marked {
     background-color: red;
 }
 
-.player1 {
-    background-color: pink;
+
+.scoreboard {
+    margin-bottom: 2em;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    font-size: 2em;
+    background-color: #64da9f;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 1px rgb(0, 0, 0, 0.5);
+    transition: step-end, 3s;
 }
 
+.restart {
+    margin-top: 1em;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    font-size: 2em;
+    background-color: #da64da;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 1px rgb(0, 0, 0, 0.5);
+    transition: step-end, 200ms;
+}
 
+.restart:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+}
 
-.player2{
-    background-color: aqua;
+.restart:active{
+    transform: scale(0.9);
+}
+
+.Player1 {
+    background-color: rgb(65, 204, 181);
+}
+
+.Player2{
+    background-color: rgb(236, 110, 230);
 }
