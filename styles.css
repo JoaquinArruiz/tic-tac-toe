@@ -1,8 +1,19 @@
 .gameboard {
     display: grid;
     grid-template: 1fr 1fr 1fr /1fr 1fr 1fr;
+    grid-gap: 0em;
 }
 
 .cell {
     border: 1px solid black;
+    height: 100px;
+    width: 132px;
+    text-align: center;
+    position: relative;
+    padding-top: 50px;
+    font-size: 2em;
+}
+
+.marked {
+    background-color: red;
 }
