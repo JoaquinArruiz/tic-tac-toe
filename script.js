@@ -5,9 +5,9 @@ document.body.appendChild(gameboard)
 const playerFactory = (type, marker, positions) => {
     return {type, marker, positions: []}
 }
-let player1 = playerFactory("player1", "x","")
-let player2 = playerFactory("player2", "o", "")
-let activePlayer = ""
+let player1 = playerFactory("player1", "❌","") // player 1
+let player2 = playerFactory("player2", "⭕️", "") // player 2
+let activePlayer = "" // auxiliar player
 
 
 const winningCondition = [
@@ -45,6 +45,7 @@ const gameBoard = () => {
             checkWinner()
             nextPlayer()
             console.log(activePlayer.positions)
+            cell.style.pointerEvents = 'none';
         }) 
         
         
@@ -67,13 +68,13 @@ function checkWinner(){
 
 function nextPlayer(){
     if (activePlayer.type == player2.type){
-        player2 = activePlayer
+        player2 = activePlayer // updates player to the active player before changin it
         activePlayer = player1
         console.log('changin to 1player')
         return activePlayer;
     }
     if (activePlayer.type == player1.type){
-        player1 = activePlayer
+        player1 = activePlayer // updates player to the active player before changin it
         activePlayer =player2
         console.log('changin to 2player')
         return activePlayer;

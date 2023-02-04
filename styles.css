@@ -12,6 +12,12 @@
     position: relative;
     padding-top: 50px;
     font-size: 2em;
+    transition: ease-in-out, 250ms;
+}
+
+.cell:hover{
+    background-color: blueviolet;
+    cursor: pointer;
 }
 
 .marked {
@@ -19,5 +25,11 @@
 }
 
 .player1 {
-    background-color: red;
+    background-color: pink;
+}
+
+
+
+.player2{
+    background-color: aqua;
 }
