@@ -6,7 +6,7 @@ const playerFactory = (type, marker, positions) => {
     return {type, marker, positions: []}
 }
 let player1 = playerFactory("player1", "x","")
-let player2 = playerFactory("player", "o", "")
+let player2 = playerFactory("player2", "o", "")
 let activePlayer = ""
 
 
@@ -37,18 +37,20 @@ const gameBoard = () => {
         cell = document.createElement('div');
         cell.classList.add('cell')
         cell.addEventListener('click', function(){
-            cell.classList.add('marked')
-            if (!player1.positions.includes(index)){
-                player1.positions.push(index);
+            cell.classList.add(activePlayer.type)
+            if (!activePlayer.positions.includes(index)){
+                activePlayer.positions.push(index);
             }
             cell.innerText = activePlayer.marker
             checkWinner()
-
-            console.log(player1.positions)
+            nextPlayer()
+            console.log(activePlayer.positions)
         }) 
         
         
         cell.innerText = index
+
+
         gameboard.appendChild(cell);
     })
     
@@ -63,7 +65,20 @@ function checkWinner(){
     })
 }
 
-
+function nextPlayer(){
+    if (activePlayer.type == player2.type){
+        player2 = activePlayer
+        activePlayer = player1
+        console.log('changin to 1player')
+        return activePlayer;
+    }
+    if (activePlayer.type == player1.type){
+        player1 = activePlayer
+        activePlayer =player2
+        console.log('changin to 2player')
+        return activePlayer;
+    }
+}
 
 activePlayer = player1
 gameBoard()
