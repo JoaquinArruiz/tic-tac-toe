@@ -74,7 +74,7 @@ const gameBoard = () => { // all the gameboard
 
 function checkWinner(){ // checks the winner if any of the win conditions is accomplished
     winningCondition.forEach(condition =>{
-        if (activePlayer.positions.includes(condition[0]) && activePlayer.positions.includes(condition[1]) && activePlayer.positions.includes(condition[2])){
+        if (activePlayer.positions.includes(condition[0]) && activePlayer.positions.includes(condition[1]) && activePlayer.positions.includes(condition[2] && endGame == false)){
             console.log('winner is ', activePlayer.type)
             scoreboard.classList.add(activePlayer.type)
             scoreboard.innerText = activePlayer.type + " is the winner! \n Congratulations!"
@@ -90,22 +90,22 @@ function checkWinner(){ // checks the winner if any of the win conditions is acc
             })
             document.body.appendChild(restart)
         }
-        else {
-             if (player1.positions.length + player2.positions.length == 9) {
-                console.log('tie');
-                scoreboard.innerText = "It's a tie"
-                endGame = true
-                gameboard.style.pointerEvents = 'none'
+             
+        if (player1.positions.length + player2.positions.length == 9 && endGame == false) {
+            console.log('tie');
+            scoreboard.innerText = "It's a tie"
+            endGame = true
+            gameboard.style.pointerEvents = 'none'
 
-                let restart = document.createElement('div')
-                restart.classList.add('restart')
-                restart.innerText = "Press Here to restart"
-                restart.addEventListener('click', () => {
-                    location.reload()
-            })
+            let restart = document.createElement('div')
+            restart.classList.add('restart')
+            restart.innerText = "Press Here to restart"
+            restart.addEventListener('click', () => {
+                location.reload()
+        })
             document.body.appendChild(restart)
-            }
         }
+        
     })
 }
 
@@ -119,7 +119,7 @@ function nextPlayer(){ //swaps the player
         scoreboard.innerText = activePlayer.type + " its your turn"
         return activePlayer; // returns the (before "next player") current player
     }
-    if (activePlayer.type == player1.type){ //the same as above but for player 2
+    if (activePlayer.type == player1.type ){ //the same as above but for player 2
         player1 = activePlayer
         activePlayer =player2
         console.log('changin to 2player')
