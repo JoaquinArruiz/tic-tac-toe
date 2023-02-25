@@ -1,7 +1,7 @@
 # tic-tac-toe
 Playable tic tac toe for 2 players (coming soon: against the machine)
 
-You can see the live test at: [Admin Dashboard: Tic-Tac-Toe](https://joaquinarruiz.github.io/tic-tac-toe/)
+You can see the live test at: [Live Test: Tic-Tac-Toe](https://joaquinarruiz.github.io/tic-tac-toe/)
 
 -----
 #### Process and Some Thoughts:
