@@ -73,8 +73,10 @@ const gameBoard = () => { // all the gameboard
 
 
 function checkWinner(){ // checks the winner if any of the win conditions is accomplished
+    console.log('checking winner')
+    console.log(player1.positions, player2.positions)
     winningCondition.forEach(condition =>{
-        if (activePlayer.positions.includes(condition[0]) && activePlayer.positions.includes(condition[1]) && activePlayer.positions.includes(condition[2] && endGame == false)){
+        if (activePlayer.positions.includes(condition[0]) && activePlayer.positions.includes(condition[1]) && activePlayer.positions.includes(condition[2]) && (endGame==false)){
             console.log('winner is ', activePlayer.type)
             scoreboard.classList.add(activePlayer.type)
             scoreboard.innerText = activePlayer.type + " is the winner! \n Congratulations!"
@@ -121,7 +123,7 @@ function nextPlayer(){ //swaps the player
     }
     if (activePlayer.type == player1.type ){ //the same as above but for player 2
         player1 = activePlayer
-        activePlayer =player2
+        activePlayer = player2
         console.log('changin to 2player')
         scoreboard.innerText = activePlayer.type + " its your turn"
         return activePlayer;
