@@ -1,6 +1,5 @@
 # tic-tac-toe
-Playable tic tac toe for 2 players (coming soon: against the machine)
-
+Playable tic tac toe for 2 players
 You can see the live test at: [Live Test: Tic-Tac-Toe](https://joaquinarruiz.github.io/tic-tac-toe/)
 
 -----
